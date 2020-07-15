@@ -3,6 +3,7 @@
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -35,15 +36,45 @@
             </objects>
             <point key="canvasLocation" x="964" y="13.943028485757123"/>
         </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="LM0-Gl-lUQ">
+            <objects>
+                <viewController storyboardIdentifier="Detail" id="Vdo-0d-0Pk" customClass="DetailViewController" customModule="StormViewer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="CT7-fm-PP1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hLZ-YB-qUp">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="nW8-Ar-z30" firstAttribute="bottom" secondItem="hLZ-YB-qUp" secondAttribute="bottom" id="8NY-Jx-cWw"/>
+                            <constraint firstItem="hLZ-YB-qUp" firstAttribute="top" secondItem="nW8-Ar-z30" secondAttribute="top" id="Yls-te-BQ2"/>
+                            <constraint firstItem="nW8-Ar-z30" firstAttribute="trailing" secondItem="hLZ-YB-qUp" secondAttribute="trailing" id="hDS-pm-A2I"/>
+                            <constraint firstItem="hLZ-YB-qUp" firstAttribute="leading" secondItem="nW8-Ar-z30" secondAttribute="leading" id="tbN-SV-5ST"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="nW8-Ar-z30"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="qlR-Q1-H74"/>
+                    <connections>
+                        <outlet property="imageView" destination="hLZ-YB-qUp" id="vZU-rE-0uh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Isn-t9-okE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1798" y="20"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="0AB-2B-R1I">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="St4-va-w0O" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="k28-OH-OeW">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="96"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="k28-OH-OeW">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.29479264350000001" green="1" blue="0.32434817259999998" alpha="0.5" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="barTintColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
