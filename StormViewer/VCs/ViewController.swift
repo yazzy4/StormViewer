@@ -24,14 +24,18 @@ class ViewController: UITableViewController {
         let path = Bundle.main.resourcePath!
         let items = try! fm.contentsOfDirectory(atPath: path)
         
-        for item in items {
+        for item in items.sorted() {
             if item.hasPrefix("nssl") {
                 pictures.append(item)
-            
             }
     
         }
         print(pictures)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.hidesBarsOnTap = false
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -49,6 +53,8 @@ class ViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let vc = storyboard?.instantiateViewController(withIdentifier: "Detail") as? DetailViewController {
             vc.selectedImage = pictures[indexPath.row]
+            vc.selectedPicture = indexPath.row + 1
+            vc.totalPicture = pictures.count
             
             navigationController?.pushViewController(vc, animated: true)
         }
